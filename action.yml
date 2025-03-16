@@ -26,10 +26,10 @@ inputs:
     default: /usr/local
     required: false
   WITH_TBB:
-    default: ON
+    default: OFF
     required: false
   WITH_IPP:
-    default: ON
+    default: OFF
     required: false
   BUILD_NEW_PYTHON_SUPPORT:
     default: OFF
@@ -38,7 +38,7 @@ inputs:
     default: OFF
     required: false
   ENABLE_PRECOMPILED_HEADERS:
-    default: ON
+    default: OFF
     required: false
   INSTALL_C_EXAMPLES:
     default: OFF
