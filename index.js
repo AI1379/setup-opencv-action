@@ -30,6 +30,8 @@ async function run_linux() {
         const GENERATOR = core.getInput("generator");
         const BUILD_LIST = core.getInput('BUILD_LIST');
 
+        core.setOutput('opencv_dir', CMAKE_INSTALL_PREFIX);
+
         if (installDeps) {
             core.startGroup('Install dependencies');
             await exec.exec('sudo add-apt-repository "deb http://security.ubuntu.com/ubuntu xenial-security main"');
@@ -140,8 +142,11 @@ async function run_windows() {
         const WITH_OPENGL = core.getInput('WITH_OPENGL');
         const GENERATE_PKGCONFIG = core.getInput('GENERATE_PKGCONFIG');
         const GENERATOR = core.getInput('generator') == undefined ? "Ninja" : core.getInput("generator"); // Ninja or Unix Makefile
+        const BUILD_LIST = core.getInput('BUILD_LIST');
         const options = {};
         options.shell = 'powershell';
+        
+        core.setOutput('opencv_dir', CMAKE_INSTALL_PREFIX);
 
         if (installDeps) {
             core.startGroup('Install dependencies');
