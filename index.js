@@ -194,8 +194,8 @@ async function run_windows() {
 
         // Clean up?
         core.startGroup('Cleanup');
-        await exec.exec('rm -r -force opencv', [], options);
-        await exec.exec('rm -r -force opencv_contrib', [], options);
+        await exec.exec('rm -rf opencv', [], options);
+        await exec.exec('rm -rf opencv_contrib', [], options);
         core.endGroup();
 
     } catch (error) {
