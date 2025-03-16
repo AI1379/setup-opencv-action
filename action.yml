@@ -58,6 +58,12 @@ inputs:
   GENERATE_PKGCONFIG:
     default: OFF
     required: false
+  GENERATOR:
+    default: 'Ninja'
+    required: false
+  BUILD_LIST:
+    default: 'core,imgproc,imgcodecs,highgui,videoio'
+    required: false
 runs:
   using: 'node16'
   main: 'index.js'
