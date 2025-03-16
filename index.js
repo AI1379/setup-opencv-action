@@ -83,7 +83,7 @@ async function run_linux() {
 
         core.startGroup('Compile and install');
         await exec.exec(cmakeCmd);
-        await exec.exec('cmake --build opencv/build --config Release -j$(nproc)');
+        await exec.exec('cmake --build opencv/build --config Release -j10');
         await exec.exec('sudo cmake --build opencv/build --target install');
         await exec.exec('sudo ldconfig');
         core.endGroup();
@@ -183,7 +183,7 @@ async function run_windows() {
 
         core.startGroup('Compile and install');
         await exec.exec(cmakeCmd, [], options);
-        await exec.exec('cmake --build opencv/build --config Release', [], options);
+        await exec.exec('cmake --build opencv/build --config Release -j10', [], options);
         await exec.exec('cmmake --build opencv/build --target install', [], options);
         core.endGroup();
 
