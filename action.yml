@@ -64,6 +64,9 @@ inputs:
   BUILD_LIST:
     default: 'core,imgproc,imgcodecs,highgui,videoio'
     required: false
+output:
+  opencv_dir:
+    description: 'The directory where OpenCV was installed.'
 runs:
   using: 'node16'
   main: 'index.js'
