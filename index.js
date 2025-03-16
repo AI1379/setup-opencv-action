@@ -189,7 +189,7 @@ async function run_windows() {
         core.startGroup('Compile and install');
         await exec.exec(cmakeCmd, [], options);
         await exec.exec('cmake --build opencv/build --config Release -j10', [], options);
-        await exec.exec('cmmake --build opencv/build --target install', [], options);
+        await exec.exec('cmake --build opencv/build --target install', [], options);
         core.endGroup();
 
         // Clean up?
